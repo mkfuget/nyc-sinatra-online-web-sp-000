@@ -11,11 +11,19 @@ class FiguresController < ApplicationController
     if !params["landmark"]["name"].empty?
       @figure.landmarks << Landmark.create(params["landmark"])
     end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 73b2d68d832740be72bf12fc86477f59d8736d8c
     if !params["title"]["name"].empty?
       @figure.titles << Title.create(params["title"])
     end
     @figure.save
+<<<<<<< HEAD
     redirect "/figures/#{@figure.id}"
+=======
+    redirect '/figures/#{@figure.id}'
+>>>>>>> 73b2d68d832740be72bf12fc86477f59d8736d8c
 
   end
 
@@ -33,6 +41,7 @@ class FiguresController < ApplicationController
 
   get '/figures/:id/edit' do
     @figure = Figure.find_by_id(params[:id])
+<<<<<<< HEAD
     @titles = Title.all
     @landmarks = Landmark.all
 
@@ -56,5 +65,11 @@ class FiguresController < ApplicationController
     redirect "/figures/#{@figure.id}"
 
   end
+=======
+    erb :'figures/edit'
+  end
+
+  patch '/figures/'
+>>>>>>> 73b2d68d832740be72bf12fc86477f59d8736d8c
 
 end
